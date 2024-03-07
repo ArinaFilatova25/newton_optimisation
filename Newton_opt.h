@@ -14,14 +14,11 @@
 class Newton_opt :
     public Optimization_method
 {
-private:
-    std::vector<double> p;
-    void correct_step_vector();
-    std::pair<std::vector<double>, double> backtracking(std::vector<double> x);
 
 public:
     Newton_opt();
     Newton_opt(Function* function, std::vector<double> x_0, Area area, Stop_criterion* stop_criterion);
+    ~Newton_opt();
 
     void optimization() override;
 };
